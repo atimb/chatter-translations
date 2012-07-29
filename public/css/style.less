@@ -1,0 +1,94 @@
+body, div, span, p, h1, h2, h3, h4, h5, h6, input, ul, li {
+    margin: 0;
+    padding: 0;
+    -webkit-padding-start: 0;
+}
+
+body {
+    
+    font: .75em arial,helvetica,clean,sans-serif;
+    
+    div.half {
+        display: inline-block;
+        width: 49%;
+        text-align: center;
+        & {
+            border-right: 1px solid #ccc;
+        }
+    }
+    
+    h1 {
+        text-align: center;
+        margin: 10px 0 20px;
+        font-style: italic;
+    }
+    
+    span.lang {
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+
+    ul.items {
+        list-style-type: none;
+        width: 500px;
+        margin: auto;
+        text-align: left;
+        margin-top: 20px;
+        li {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+            div {
+                width: 440px;
+                float: left;
+            }
+            img {
+                float: left;
+                margin-right: 10px;
+                width: 45px;
+                height: 45px;
+            }
+            span.actor {
+                color: #015BA7;
+                font-weight: bold;
+            }
+            span.text {
+            }
+            span.date {
+                display: block;
+                margin: 5px 0;
+                color: #7D7D84;
+                font-size: 0.92em;
+            }
+            
+            ul.comments {
+                width: auto;
+                margin: 0;
+                li {
+                    background: #EFF7FA;
+                    border-bottom: 1px solid #DEE5EA;
+                    border-top: 1px solid white;
+                    padding: 5px 0;
+                    div {
+                        width: 300px;
+                    }
+                    img {
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 5px;
+                    }
+                }
+            }
+            
+        }
+    }
+
+        
+}
+
+.group:before, .group:after {
+    content: "";
+    display: table;
+}
+.group:after {
+    clear: both;
+}

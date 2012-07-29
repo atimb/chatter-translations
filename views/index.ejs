@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link href='http://fonts.googleapis.com/css?family=Bangers|Fredoka+One' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet/less" type="text/css" href="css/style.less">
+        <script type="text/javascript" src="js/less-1.2.1.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+        <script type="text/javascript" src="js/base.js"></script>
+    </head>
+    <body>
+        
+        <h1>Chatter Translation</h1>
+        
+        <form action="/" method="get">
+        
+            <div class="half">
+            
+                <span class="lang">from:</span>
+                <select name="from" onchange="this.form.submit()">
+                    <% for(var i = 0; i < fromLangs.length; i++) { %>
+                        <option value="<%= fromLangs[i] %>" <%= (fromLang == fromLangs[i]) ? 'selected':'' %>><%= fromLangs[i] %></option>
+                    <% } %>
+                </select>
+            
+                 <ul class="items">
+                     <% for(var i = 0; i < chatter.items.length; i++) {%>
+                        <li class="group">
+                            <img src="<%= chatter.items[i].photoUrl %>" />
+                            <div>
+                                <span class="actor"><%- chatter.items[i].actor.name %></span>
+                                <span class="text"><%- chatter.items[i].body.text %></span>
+                                <br />
+                                <span class="date"><%= chatter.items[i].createdDate %></span>
+                                <ul class="items comments">
+                                    <% for(var j = 0; j < chatter.items[i].comments.comments.length; j++) {%>
+                                        <li class="group">
+                                            <img src="<%= chatter.items[i].comments.comments[j].user.photo.smallPhotoUrl %>" />
+                                            <div>
+                                                <span class="actor"><%- chatter.items[i].comments.comments[j].user.name %></span>
+                                                <span class="text"><%- chatter.items[i].comments.comments[j].body.text %></span>
+                                                <br />
+                                                <span class="date"><%= chatter.items[i].comments.comments[j].createdDate %></span>
+                                            </div>
+                                       </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </li>
+                     <% } %>
+                 </ul>
+         
+             </div>
+             <div class="half">
+             
+                <span class="lang">to:</span>
+                <select name="to" onchange="this.form.submit()">
+                    <% for(var i = 0; i < toLangs.length; i++) { %>
+                        <option value="<%= toLangs[i] %>" <%= (toLang == toLangs[i]) ? 'selected':'' %>><%= toLangs[i] %></option>
+                    <% } %>
+                </select>
+         
+                 <ul class="items">
+                     <% for(var i = 0; i < chatter.items.length; i++) {%>
+                        <li class="group">
+                            <img src="<%= chatter.items[i].photoUrl %>" />
+                            <div>
+                                <span class="actor"><%- chatter.items[i].actor.name %></span>
+                                <span class="text"><%- chatter.items[i].body.text2 %></span>
+                                <br />
+                                <span class="date"><%= chatter.items[i].createdDate %></span>
+                                <ul class="items comments">
+                                    <% for(var j = 0; j < chatter.items[i].comments.comments.length; j++) {%>
+                                        <li class="group">
+                                            <img src="<%= chatter.items[i].comments.comments[j].user.photo.smallPhotoUrl %>" />
+                                            <span class="actor"><%- chatter.items[i].comments.comments[j].user.name %></span>
+                                            <span class="text"><%- chatter.items[i].comments.comments[j].body.text2 %></span>
+                                            <br />
+                                            <span class="date"><%= chatter.items[i].comments.comments[j].createdDate %></span>
+                                       </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </li>
+                     <% } %>
+                 </ul>
+         
+             </div>
+         
+         </form>
+
+     </body>
+</html>
