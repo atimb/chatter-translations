@@ -1,6 +1,8 @@
 chatter-translations
 ====================
 
+![Demo screenshot](https://github.com/atimb/chatter-translations/raw/master/screenshot/demo.png)
+
 Entry for this challenge: http://www.cloudspokes.com/challenges/1641
 
 Demo: http://chatter-translations.herokuapp.com
