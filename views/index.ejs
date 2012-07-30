@@ -10,19 +10,25 @@
     </head>
     <body>
         
-        <h1>Chatter Translation</h1>
+        <h1>
+            <img class="salesforce" src="https://na9.salesforce.com/img/seasonLogos/sales_logo_aloha_sum12.gif" />
+            Chatter Translation
+            <img class="cloudspokes" src="https://www.cloudspokes.com/assets/cloudspokes-logo-hor.png" />
+        </h1>
         
-        <form action="/" method="get">
+        <form class="container" action="/" method="get">
         
             <div class="half">
             
-                <span class="lang">from:</span>
+                <button type="submit" name="page" value="first">&lt;- First page</button>
+            
+                <span class="lang">Translate from: </span>
                 <select name="from" onchange="this.form.submit()">
                     <% for(var i = 0; i < fromLangs.length; i++) { %>
                         <option value="<%= fromLangs[i] %>" <%= (fromLang == fromLangs[i]) ? 'selected':'' %>><%= fromLangs[i] %></option>
                     <% } %>
                 </select>
-            
+
                  <ul class="items">
                      <% for(var i = 0; i < chatter.items.length; i++) {%>
                         <li class="group">
@@ -53,7 +59,9 @@
              </div>
              <div class="half">
              
-                <span class="lang">to:</span>
+                <button type="submit" name="page" value="next">Next page -&gt;</button>
+                 
+                <span class="lang">Translate to:</span>
                 <select name="to" onchange="this.form.submit()">
                     <% for(var i = 0; i < toLangs.length; i++) { %>
                         <option value="<%= toLangs[i] %>" <%= (toLang == toLangs[i]) ? 'selected':'' %>><%= toLangs[i] %></option>

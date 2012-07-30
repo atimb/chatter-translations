@@ -6,26 +6,63 @@ body, div, span, p, h1, h2, h3, h4, h5, h6, input, ul, li {
 
 body {
     
+    .linear-gradient(top, white 0%, rgba(22,150,191,1) 200px);
+    background-color: rgb(22,150,191);
+    background-repeat: no-repeat;
     font: .75em arial,helvetica,clean,sans-serif;
     
-    div.half {
-        display: inline-block;
-        width: 49%;
+    h1 {
+        color: white;
+        line-height: 75px;
+        background: rgb(22,150,191);
         text-align: center;
-        & {
-            border-right: 1px solid #ccc;
+        width: 90%;
+        margin: 0 auto;
+        font-style: italic;
+        border-radius: 0 0 10px 10px;
+        img.cloudspokes {
+            float: right;
+            height: 80px;
+            position: relative;
+            top: -10px;
+        }
+        img.salesforce {
+            float: left;
+            
         }
     }
     
-    h1 {
-        text-align: center;
-        margin: 10px 0 20px;
-        font-style: italic;
-    }
+    form.container {
+        background: white;
+        width: 90%;
+        margin: 20px auto 40px;
+        .border-radius(10px);
+        .box-shadow(0 5px 5px hsla(0,0,0,0.3));
+        .linear-gradient(top, rgba(0,0,0,0.2) 0, rgba(0,0,0,0) 70px);
+        background-repeat: no-repeat;
+        
+        div.half {
+            display: inline-block;
+            width: 49%;
+            text-align: center;
+            padding-top: 20px;
     
-    span.lang {
-        font-size: 1.3em;
-        font-weight: bold;
+            span.lang {
+                font-size: 1.3em;
+                font-weight: bold;
+            }
+            button {
+                float: left;
+                margin-left: 10px;
+            }
+            &:first-child {
+                border-right: 1px solid #ccc;
+                button {
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+        }
     }
 
     ul.items {
@@ -85,10 +122,67 @@ body {
         
 }
 
+/* Clearfix */
 .group:before, .group:after {
     content: "";
     display: table;
 }
 .group:after {
     clear: both;
+}
+
+/* Browser prefix templates */
+.opacity(@a) {
+    opacity: @a;
+    @ie-opacity: 100 * @a;
+    filter: e(%("alpha(opacity=%s)", @ie-opacity));
+}
+.border-radius(@a) {
+    -webkit-border-radius: @a;
+    -moz-border-radius: @a;
+    border-radius: @a;
+}
+.box-shadow(@a) {
+    -webkit-box-shadow: @a;
+    -moz-box-shadow: @a;
+    box-shadow: @a;
+}
+.box-shadow(@a, @b) {
+    -webkit-box-shadow: @a, @b;
+    -moz-box-shadow: @a, @b;
+    box-shadow: @a, @b;
+}
+.box-shadow(@a, @b, @c) {
+    -webkit-box-shadow: @a, @b, @c;
+    -moz-box-shadow: @a, @b, @c;
+    box-shadow: @a, @b, @c;
+}
+.radial-gradient(@a, @b, @c, @d) {
+    background-image: -webkit-radial-gradient(@a, @b, @c, @d);
+    background-image: -moz-radial-gradient(@a, @b, @c, @d);
+    background-image: -ms-radial-gradient(@a, @b, @c, @d);
+    background-image: -o-radial-gradient(@a, @b, @c, @d);
+    background-image: radial-gradient(@a, @b, @c, @d);
+}
+.linear-gradient(@a, @b, @c) {
+    background-image: -webkit-linear-gradient(@a, @b, @c);
+    background-image: -moz-linear-gradient(@a, @b, @c);
+    background-image: -ms-linear-gradient(@a, @b, @c);
+    background-image: -o-linear-gradient(@a, @b, @c);
+    background-image: linear-gradient(@a, @b, @c);
+}
+.transition(@a) {
+    -webkit-transition: @a;
+    -moz-transition: @a;
+    -o-transition: @a;
+    transition: @a;
+}
+.transition(@a, @b, @c) {
+    -webkit-transition: @a, @b, @c;
+    -moz-transition: @a, @b, @c;
+    -o-transition: @a, @b, @c;
+    transition: @a, @b, @c;
+}
+.background-size(@a) {
+    -webkit-background-size: @a;
 }
