@@ -1,10 +1,10 @@
 {
     "SALESFORCE": {
-        "clientId": "3MVG9y6x0357Hlefp6U9hm_F0MqHAWnonVKzi5npNtcAX3lyhS9IlV2Vr4AqUh8byHYh9IibyXdDbwdcCYlw3",
-        "clientSecret": "8229303029256382060",
-        "redirectUri": "https://chatter-translations.herokuapp.com/oauth2/callback"
+        "clientId": "",
+        "clientSecret": "",
+        "redirectUri": ""
     },
     "APERTIUM": {
-        "apiKey": "Rc20e8YIqlraFPPStT48cUhj06M"
+        "apiKey": ""
     }
 }
